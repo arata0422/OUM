@@ -4,9 +4,185 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUM</title>
+    <title>OUM～オンラインで受かる面接～</title>
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    
-</body>
+    <section class="section0"></section>
+    <section class="section8"></section>
+    <section class="section1"></section>
+    <section class="section2"></section>
+    <section class="section3"></section>
+    <section class="section4"></section>
+    <section class="section5"></section>
+    <section class="section6"></section>
+    <section class="section7"></section>
+    <img class="oum" src="oum.PNG" width="10%"><p class="title"><b><font size="9" face="メイリオ">OUM</font><font size="6" face="メイリオ">～オンラインで受かる<font color="red">面接</font>～</font></b></p>
+    <button style="background-color:#ffffff"
+    onmouseover="this.style.background='#e6e6fa'" 
+    onmouseout="this.style.background='#ffffff'"
+    class="btn1" onclick="guide()"><font size="5" face="メイリオ">オンライン面接対策ガイド</font></button>
+    <button style="background-color:#ffffff"
+    onmouseover="this.style.background='#e6e6fa'" 
+    onmouseout="this.style.background='#ffffff'"
+    class="btn2" onclick="rokuga()"><font size="5" face="メイリオ">面接練習をする</font></button>
+    <button style="background-color:#ffffff"
+    onmouseover="this.style.background='#e6e6fa'" 
+    onmouseout="this.style.background='#ffffff'"
+    class="btn3" onclick="file()"><font size="5" face="メイリオ">面接練習を振り返る</font></button>
+    <button onmouseover="this.style.color='#b0c4de'"
+    onmouseout="this.style.color='#5c76cc'"
+     class="btn4" onclick="tukaikata()"><font size="4" face="メイリオ">使い方を見る</font></button>
 </html>
+
+<script>
+  function guide(){
+  
+  location.replace("./guide.html");
+  
+  }
+  function rokuga(){
+  
+  location.replace("./rokuga.html");
+  
+  }
+  function file(){
+  
+  location.replace("./file.html");
+  
+  }
+  function tukaikata(){
+  
+  location.replace("./tukaikata.html");
+  
+  }
+</script>
+
+<style>
+  p.title
+    {
+      position: absolute; 
+      top: 25px;
+      text-indent: 180px;/*右に微調節*/
+    }
+    .btn1
+    {
+    cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+    color: #5c76cc;
+    width: 30em;
+    height:4.5em;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 110px;
+    left: 1000px;
+    margin: auto;
+    border:2px dotted #5c76cc;
+    }
+    .btn2
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 30em;
+    height:4.5em;
+    position: absolute;
+    top: 90px;
+    right: 0px;
+    bottom: 0px;
+    left: 1000px;
+    margin: auto;
+    border:2px dotted #5c76cc;
+    }
+    .btn3
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 30em;
+    height:4.5em;
+    position: absolute;
+    top: 290px;
+    right: 0px;
+    bottom: 0px;
+    left: 1000px;
+    margin: auto;
+    border:2px dotted #5c76cc;
+    }.btn4
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 10em;
+    height:2em;
+    position: absolute;
+    top: -800px;
+    right: 0px;
+    bottom: 0px;
+    left: 1700px;
+    margin: auto;
+    border: none;
+    background: transparent;
+    }
+    .section0{
+    background-color: #ffffff;
+    height: 100px;
+    }
+    .section8{
+    background-color: #748bbb;
+    height: 1px;
+    }
+    .section1{
+    background-color: #ffffff;
+    height: 210px;
+    }
+    .section2{
+    background-color: #cbf1fa;
+    height: 15px;
+    }
+    .section3{
+    background-color: #ffffff;
+    height: 15px;
+    }
+    .section4{
+    background-color: #cbf1fa;
+    height: 380px;
+    }
+    .section5{
+    background-color: #ffffff;
+    height: 15px;
+    }
+    .section6{
+    background-color: #cbf1fa;
+    height: 15px;
+    }
+    .section7{
+    background-color: #ffffff;
+    height: 200px;
+    }
+    .oum{
+    animation: poyopoyo 2s ease-out infinite;
+    opacity: 1;
+    width: 10em;
+    height:auto;
+    position: absolute;
+    top: 0px;
+    right: 1650px;
+    bottom: 820px;
+    left: 0px;
+    margin: auto;
+    }
+    @keyframes poyopoyo {
+    0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+    }
+    50%, 70% {
+    transform: scale(0.95);
+      }
+    }
+</style>

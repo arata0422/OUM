@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUMの使い方を見る</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <section class="section0"></section>
+    <section class="section8"></section>
+    <section class="section1"></section>
+    <section class="section3"></section>
+    <section class="section4"></section>
+    <section class="section2"></section>
+    <img class="oum" src="oum.PNG" width="10%"><p class="title"><b><font size="9" face="メイリオ">OUM</font><font size="6" face="メイリオ">～オンラインで受かる<font color="red">面接</font>～</font></b></p>
+    <button onmouseover="this.style.color='#b0c4de'"
+    onmouseout="this.style.color='#5c76cc'"
+    class="btn5" onclick="home()"><font size="4" face="メイリオ">Home</font></button>
+</html>
+
+<script>
+function home(){
+
+location.replace("./home.html");
+
+}
+
+</script>
+<style>
+  p.title
+    {
+      position: absolute; 
+      top: 25px;
+      text-indent: 180px;/*右に微調節*/
+    }
+    .btn5
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 10em;
+    height:2em;
+    position: absolute;
+    top: -800px;
+    right: 0px;
+    bottom: 0px;
+    left: 1450px;
+    margin: auto;
+    border: none;
+    background: transparent;
+    }
+    .section0{
+    background-color: #ffffff;
+    height: 100px;
+    }
+    .section8{
+    background-color: #748bbb;
+    height: 1px;
+    }
+    .section1{
+    background-color: #ffffff;
+    height: 174px;
+    }
+    .section3{
+    background-color: #cbf1fa;
+    height: 8px;
+    }
+    .section4{
+    background-color: #ffffff;
+    height: 8px;
+    }
+    .section2{
+    background-color: #cbf1fa;
+    height: 660px;
+    }
+    .oum{
+    width: 10em;
+    height:auto;
+    position: absolute;
+    top: 0px;
+    right: 1650px;
+    bottom: 820px;
+    left: 0px;
+    margin: auto;
+    }
+</style>

@@ -4,18 +4,159 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUM</title>
+    <title>OUMで面接練習をする</title>
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    <img class="haikei"><img src="oum.PNG" width="10%"><p class="title"><b><font size="9" face="メイリオ">OUM　～オンラインで受かる面接～</font></b>
-    <br><img class="tab"><img src="mizuiro.png"width="196%">
+  <section class="section0"></section>
+  <section class="section8"></section>
+  <section class="section1"></section>
+  <section class="section3"></section>
+  <section class="section4"></section>
+  <section class="section2"></section>
+  <img class="oum" src="oum.PNG" width="10%"><p class="title"><b><font size="9" face="メイリオ">OUM</font><font size="6" face="メイリオ">～オンラインで受かる<font color="red">面接</font>～</font></b></p>
+  <button onmouseover="this.style.color='#b0c4de'"
+  onmouseout="this.style.color='#5c76cc'"
+   class="btn4" onclick="tukaikata()"><font size="4" face="メイリオ">使い方を見る</font></button>
+  <button onmouseover="this.style.color='#b0c4de'"
+  onmouseout="this.style.color='#5c76cc'"
+  class="btn5" onclick="home()"><font size="4" face="メイリオ">Home</font></button>
+  <div class="situmon">
+  <input type="text" id="situmon" placeholder="ランダムに表示されます">
+  <input type="button" value="表示" onClick="ranAry()">
+  </div>
 </html>
+
+<script>
+  function home(){
+  
+  location.replace("./home.html");
+  
+  }
+  function tukaikata(){
+  
+  location.replace("./tukaikata.html");
+  
+  }
+  
+  let i=0;
+
+  function ranAry() {
+    if(i<6)
+    {
+      var situmon1 =  ["簡単に自己紹介をお願い致します。", "あなたの強みを教えてください。"
+      , "弊社の志望理由を教えてください。", "あなたの長所と短所を教えてください。", "学生時代に頑張ったことを教えてください。",""];
+      document.getElementById("situmon").value = situmon1[i];
+      i++;
+    }
+    if(i>=6 && i<=11)
+    {
+      var situmon2 = 
+        [
+            '今までで一番大変だったことは何ですか？',
+            '最近うれしかったことは何ですか？','就職活動を行う上で大切にしているところはありますか？',
+            '入社後どのような社会人になりたいですか？','あなたは周囲の方からどのような人だといわれますか？',
+            '弊社以外に受けている企業はありますか？','アルバイト経験はありますか？していたらそこで身に着けた力を教えてください。',
+            '普段学校ではどのような授業をしていますか？','現在の学部を専攻した理由を教えてください。',
+            '趣味特技を教えてください。','動物の中であなたは何に例えられますか？',
+            '10年後あなたはどのような人になっていると思いますか？','弊社でどのような経験、スキルを身に着けたいですか？',
+            'どんな時にモチベーションが上がりますか？','仕事以外でチャレンジしてみたいことはありますか？',
+            '一日が48時間だとしたら何に時間を当てますか？','尊敬する人はいますか？',
+            '弊社に入社する上で重要視していることは何ですか？','あなたの性格について教えてください。',
+            '弊社ではどんな業務に携わってみたいですか？',''
+        ];
+      document.getElementById("situmon").value = 
+      situmon2[Math.floor( Math.random() * (19 - 0 + 1)) + 0];
+      i++;
+    }
+  
+  }
+
+</script>
 
 <style>
   p.title
     {
       position: absolute; 
-      top: 0;
+      top: 25px;
       text-indent: 180px;/*右に微調節*/
+    }
+    .btn4
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 10em;
+    height:2em;
+    position: absolute;
+    top: -800px;
+    right: 0px;
+    bottom: 0px;
+    left: 1700px;
+    margin: auto;
+    border: none;
+    background: transparent;
+    }
+    .btn5
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 10em;
+    height:2em;
+    position: absolute;
+    top: -800px;
+    right: 0px;
+    bottom: 0px;
+    left: 1450px;
+    margin: auto;
+    border: none;
+    background: transparent;
+    }
+    .section0{
+    background-color: #ffffff;
+    height: 100px;
+    }
+    .section8{
+    background-color: #748bbb;
+    height: 1px;
+    }
+    .section1{
+    background-color: #ffffff;
+    height: 174px;
+    }
+    .section3{
+    background-color: #cbf1fa;
+    height: 8px;
+    }
+    .section4{
+    background-color: #ffffff;
+    height: 8px;
+    }
+    .section2{
+    background-color: #cbf1fa;
+    height: 660px;
+    }
+    .oum{
+    width: 10em;
+    height:auto;
+    position: absolute;
+    top: 0px;
+    right: 1650px;
+    bottom: 820px;
+    left: 0px;
+    margin: auto;
+    }
+    .situmon{
+    width: 10em;
+    height:auto;
+    position: absolute;
+    top: 700px;
+    right: 900px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
     }
 </style>

@@ -4,17 +4,297 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUM</title>
+    <title>OUMで面接練習を振り返る</title>
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    <div class="haikei"><img src="sentaku.jpg" alt=""></div>
-</body>
+  <section class="section0"></section>
+  <section class="section8"></section>
+  <section class="section1"></section>
+  <section class="section3"></section>
+  <section class="section4"></section>
+  <section class="section2"></section>
+  <section class="section7"></section>
+  <section class="section9"></section>
+  <section class="section10"></section>
+    <img class="oum" src="oum.PNG" width="10%"><p class="title"><b><font size="9" face="メイリオ">OUM</font><font size="6" face="メイリオ">～オンラインで受かる<font color="red">面接</font>～</font></b></p>
+    <button onmouseover="this.style.color='#b0c4de'"
+    onmouseout="this.style.color='#5c76cc'"
+     class="btn4" onclick="tukaikata()"><font size="4" face="メイリオ">使い方を見る</font></button>
+    <button onmouseover="this.style.color='#b0c4de'"
+    onmouseout="this.style.color='#5c76cc'"
+    class="btn5" onclick="home()"><font size="4" face="メイリオ">Home</font></button>
+    <div class="check"><font size="5" face="メイリオ">
+      <font class="hyouka" size="6" face="メイリオ" >　　自己評価チェックシート</font>
+      <form name="myform">
+      <table cellpadding="1" cellspacing="0" border="0">
+      <b><p>＜話し方＞</b>
+      <br><input type="checkbox" onclick="keisan()" name="check1">声で明るくハキハキと話せている
+      <br><input type="checkbox" onclick="keisan()" name="check2">結論から話し、簡潔に分かりやすく話せている
+      <br><input type="checkbox" onclick="keisan()" name="check3">きちんと敬語を話せている
+      <br><input type="checkbox" onclick="keisan()" name="check4">おおよそ１分間の間に話せている
+      <br><b><p>＜態度＞</b>
+      <br><input type="checkbox" onclick="keisan()" name="check5">質問の際にあいずちが出来ている
+      <br><input type="checkbox" onclick="keisan()" name="check6">話す際に身振り手振りが出来ている
+      <br><input type="checkbox" onclick="keisan()" name="check7">姿勢がまっすぐになっている
+      <br><input type="checkbox" onclick="keisan()" name="check8">カメラを見ている
+      <br><input type="checkbox" onclick="keisan()" name="check9">笑顔で話せている
+      <br><b><p>＜その他＞</b>
+      <br><input type="checkbox" onclick="keisan()" name="check10">ハウリングやエコーが起こっていない
+      <br><input type="checkbox" onclick="keisan()" name="check11">スーツをきちんと着用している
+      <div class="goukei">達成度<input class="text" type="text" name="total" value="0">%</div>
+      <input onmouseover="this.style.color='#b0c4de'"
+      onmouseout="this.style.color='#4b5c75'"
+      class="box" type="button"   value="全てのチェックを外す" onClick="checkre()">
+      </font>
+      </div>
+      </table>
+      </form>
+
+      <div class="list">
+        <p>チェックリストログ</p>
+        <div class="kotei">
+        <input id="date" type="date" />
+        <input id="tasseido" class="tasseido" type="number" max="100" min="0" placeholder="達成度" />
+        <input id="komento" type="text" placeholder="一言コメント（反省点など）" />
+        <button id="hozon">保存</button>
+        </div>
+      </div>
 </html>
 
-<style>
-    .haikei {
-  background: url(sentaku.jpg); /* 背景画像に緑の画像を指定 */
-  width: 800px;   /* 画像にあわせて適当な幅を指定 */
-  padding: 20px;  /* 適当な余白を指定 */
+<script>
+
+const table = document.querySelector('table');
+const date = document.querySelector('input[type="date"]');
+const tasseido = document.getElementById('tasseido');
+const komento = document.getElementById('komento');
+const hozon = document.getElementById('hozon');
+
+const item = {}; 
+
+hozon.addEventListener('click', () => {
+  if (date.value != '') {
+  item.date = date.value;
+} else {
+  const date = new Date(); // 本日の日付情報を取得
+  item.date = date.toLocaleDateString();
 }
+if (tasseido.value != '') {
+  item.tasseido = '　' + tasseido.value + '％';
+} else {
+  window.alert('自己評価チェックシートの達成度を入力してください');
+  return;
+}
+
+item.komento = '　' + komento.value;
+
+console.log(item); 
+
+date.value = '';
+tasseido.value = '';
+komento.value = '';
+
+const tr = document.createElement('tr');
+
+for (const prop in item) {
+  const td = document.createElement('td');
+  td.textContent = item[prop];
+  tr.appendChild(td);
+}
+
+table.append(tr);
+
+});
+
+  function home(){
+  
+  location.replace("./home.html");
+  
+  }
+  function tukaikata(){
+  
+  location.replace("./tukaikata.html");
+  
+  }
+
+  plice=new Array();
+  plice[0]=9.09;plice[1]=9.09;plice[2]=9.09;plice[3]=9.09;plice[4]=9.09;plice[5]=9.09;
+  plice[6]=9.09;plice[7]=9.09;plice[8]=9.09;plice[9]=9.09;plice[10]=9.10;
+  function keisan(){
+  goukei=0;
+  for(i=0;i<=10;i++){
+  if(document.myform.elements[i].checked==true){
+  goukei=goukei+plice[i];
+  }
+  }
+  document.myform.total.value=goukei;
+  }
+
+  function checkre()
+  {
+	for (i=1; i<=11; i++) document.myform.elements["check"+i].checked = false;
+  document.myform.total.value=0;
+  }
+
+</script>
+
+<style>
+  p.title
+    {
+      position: absolute; 
+      top: 25px;
+      text-indent: 180px;/*右に微調節*/
+    }
+    .btn4
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 10em;
+    height:2em;
+    position: absolute;
+    top: -800px;
+    right: 0px;
+    bottom: 0px;
+    left: 1700px;
+    margin: auto;
+    border: none;
+    background: transparent;
+    }
+    .btn5
+    {
+      cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+      color: #5c76cc;
+    width: 10em;
+    height:2em;
+    position: absolute;
+    top: -800px;
+    right: 0px;
+    bottom: 0px;
+    left: 1450px;
+    margin: auto;
+    border: none;
+    background: transparent;
+    }
+    .section0{background-color: #ffffff;height: 100px;}
+    .section8{background-color: #748bbb;height: 1px;}
+    .section1{background-color: #ffffff;height: 174px;}
+    .section3{background-color: #cbf1fa;height: 8px;}
+    .section4{background-color: #ffffff;height: 8px;}
+    .section2{background-color: #cbf1fa;height: 660px;}
+    .section7
+    {
+    background-color: #abbad1;width: 2px;height: 570px;
+    position: absolute;
+    top: 300px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+    }
+    .section9
+    {
+    background-color: #abbad1;width: 500px;height: 2px;
+    position: absolute;
+    top: 160px;
+    right: 1100px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+    }
+    .section10
+    {
+    background-color: #abbad1;width: 500px;height: 2px;
+    position: absolute;
+    top: 630px;
+    right: 1100px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+    }
+    .check
+    {
+      color: #4b5c75;
+    position: absolute;
+    top: 300px;
+    right: 0px;
+    bottom: 0px;
+    left: 200px;
+    margin: auto;
+    } 
+    .hyouka{
+      color: #4b5c75;
+    }
+    .goukei{
+    position: absolute;
+    top: 580px;
+    right: 0px;
+    bottom: 0px;
+    left: 560px;
+    margin: auto;
+    }
+    input.text{
+    text-align:right;
+    width: 2em;
+    height:2em;
+    font-size:130%;
+    background-color:transparent;
+    border: none;
+    }
+      .box{
+        cursor: pointer;
+	  padding: 10px 20px;
+	  font-size: 16px;
+    color: #4b5c75;
+    width: 12em;
+    height:3em;
+    position: absolute;
+    top: 0px;
+    right: 425px;
+    bottom: 550px;
+    left: 0px;
+    margin: auto;
+    border: none;
+    background: transparent;
+    }
+    .oum{
+    width: 10em;
+    height:auto;
+    position: absolute;
+    top: 0px;
+    right: 1650px;
+    bottom: 820px;
+    left: 0px;
+    margin: auto;
+    }
+    .list{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 850px;
+    margin: auto;
+    }
+    .tasseido{
+      width: 3em;
+      height:auto;
+    }
+    table{
+    text-align: left;
+    vertical-align: top;
+    table-layout: fixed;
+	  max-height: 30;
+    max-width: 30;
+    font-size: 80%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 350px;
+    left: 200px;
+    margin: auto;
+    overflow: scroll;
+    }
 </style>
